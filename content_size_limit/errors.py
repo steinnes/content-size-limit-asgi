@@ -1,0 +1,2 @@
+class ContentSizeExceeded(Exception):
+    pass

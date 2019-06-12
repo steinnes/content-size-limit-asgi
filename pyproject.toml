@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "content-size-limit-asgi"
+version = "0.1.0"
+description = "An ASGI3 middleware to implement maximum content size limits (mostly useful for HTTP uploads)"
+authors = ["Steinn Eldjárn Sigurðarson <steinnes@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+starlette = "^0.12.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^4.6"
+pytest-cov = "^2.7"
+flake8 = "^3.7"
+asynctest = "^0.13.0"
+pytest-asyncio = "^0.10.0"
+requests = "^2.22"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
