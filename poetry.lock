@@ -269,8 +269,8 @@ python-versions = ">=2.7"
 version = "0.5.1"
 
 [metadata]
-content-hash = "8563a1b637a0264196f8784ea6c8661d710c6e1a704e53134f8e2428c3edef20"
-python-versions = "^3.7"
+content-hash = "0acac86d37764c99c30e50c82e0fb7ab8b6c5c448d33549e0ae244213a3dc86b"
+python-versions = "^3.6"
 
 [metadata.hashes]
 asynctest = ["5da6118a7e6d6b54d83a8f7197769d046922a44d2a99c21382f0a6e4fadae676", "c27862842d15d83e6a34eb0b2866c323880eb3a75e4485b079ea11748fd77fac"]
