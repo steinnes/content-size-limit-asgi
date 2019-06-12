@@ -1,5 +1,7 @@
 # content size limit
 
+[![CircleCI](https://circleci.com/gh/steinnes/content-size-limit-asgi.svg?style=svg)](https://circleci.com/gh/steinnes/content-size-limit-asgi)
+
 This is a middleware for ASGI which intercepts the receive() method to raise
 an exception when the read bytes exceed the given limit.
 
