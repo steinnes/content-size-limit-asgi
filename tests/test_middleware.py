@@ -5,7 +5,7 @@ from unittest import mock
 from starlette.responses import PlainTextResponse
 from starlette.testclient import TestClient
 
-from content_size_limit import ContentSizeLimitMiddleware, ContentSizeExceeded
+from content_size_limit_asgi import ContentSizeLimitMiddleware, ContentSizeExceeded
 
 
 def test_content_size_limit_exceeded(app):
