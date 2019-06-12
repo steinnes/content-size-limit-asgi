@@ -59,3 +59,20 @@ async def test_non_http_scope_emits_warning(app, scope, send):
 
     await mw(scope(type="websocket"), None, send)
     assert log_mock.warning.called
+
+
+def test_custom_exception_class(app):
+    class MyException(Exception):
+        pass
+
+    app.add_middleware(ContentSizeLimitMiddleware, exception_cls=MyException, max_content_size=1000)
+
+    @app.route("/", methods=["POST"])
+    async def index(request):
+        body = await request.body()
+        return PlainTextResponse(f"test: {body}")
+
+    client = TestClient(app)
+
+    with pytest.raises(MyException):
+        client.post("/", data=b"a" * 1001)

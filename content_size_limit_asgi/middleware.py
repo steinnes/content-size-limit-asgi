@@ -18,6 +18,8 @@ class ContentSizeLimitMiddleware:
         self.max_content_size = max_content_size
         if exception_cls is None:
             self.exception_cls = ContentSizeExceeded
+        else:
+            self.exception_cls = exception_cls
 
         self.logger = get_logger(__name__)
 
