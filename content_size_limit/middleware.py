@@ -35,7 +35,6 @@ class ContentSizeLimitMiddleware:
                 raise self.exception_cls(
                     f"Maximum content size limit ({self.max_content_size}) exceeded ({received} bytes read)"
                 )
-            print("returning message..")
             return message
         return inner
 
