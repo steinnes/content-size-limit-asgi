@@ -4,6 +4,7 @@ version = "0.1.1"
 description = "An ASGI3 middleware to implement maximum content size limits (mostly useful for HTTP uploads)"
 authors = ["Steinn Eldjárn Sigurðarson <steinnes@gmail.com>"]
 license = "MIT"
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.6"
