@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "content_size_limit_asgi"
-version = "0.1.1"
+version = "0.1.2"
 description = "An ASGI3 middleware to implement maximum content size limits (mostly useful for HTTP uploads)"
 authors = ["Steinn Eldjárn Sigurðarson <steinnes@gmail.com>"]
 license = "MIT"
