@@ -134,7 +134,7 @@ def upload_document(request):
             code=MAX_FILE_SIZE_EXCEEDED,
         )
     ...
-``` 
+```
 
 If the maximum file size is 5MB, and the uploaded file was 50MB, then this
 implementation reads the entire 50MB into memory before rejecting the
