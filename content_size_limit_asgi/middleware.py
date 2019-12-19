@@ -42,7 +42,6 @@ class ContentSizeLimitMiddleware:
 
     async def __call__(self, scope, receive, send):
         if scope['type'] != 'http':
-            self.logger.warning(f"ASGI scope of type {scope['type']} is not supported yet")
             await self.app(scope, receive, send)
             return
 
