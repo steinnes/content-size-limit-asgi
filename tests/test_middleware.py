@@ -1,7 +1,5 @@
 import pytest
 
-from unittest import mock
-
 from starlette.responses import PlainTextResponse
 from starlette.testclient import TestClient
 
@@ -48,17 +46,6 @@ def test_no_content_size_limit(app):
 
     resp = client.post("/", data=b"a" * 100)
     assert resp.content == f"test: {b'a' * 100}".encode('utf-8')
-
-
-@pytest.mark.asyncio
-async def test_non_http_scope_emits_warning(app, scope, send):
-    log_mock = mock.MagicMock()
-
-    mw = ContentSizeLimitMiddleware(app)
-    mw.logger = log_mock
-
-    await mw(scope(type="websocket"), None, send)
-    assert log_mock.warning.called
 
 
 def test_custom_exception_class(app):

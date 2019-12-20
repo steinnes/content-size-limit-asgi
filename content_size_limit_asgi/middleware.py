@@ -13,7 +13,13 @@ class ContentSizeLimitMiddleware:
       max_content_size (optional): the maximum content size allowed in bytes, None for no limit
       exception_cls (optional): the class of exception to raise (ContentSizeExceeded is the default)
     """
-    def __init__(self, app, max_content_size: Optional[int] = None, exception_cls: Optional[Type[Exception]] = None):
+
+    def __init__(
+        self,
+        app,
+        max_content_size: Optional[int] = None,
+        exception_cls: Optional[Type[Exception]] = None,
+    ):
         self.app = app
         self.max_content_size = max_content_size
         if exception_cls is None:
@@ -29,20 +35,20 @@ class ContentSizeLimitMiddleware:
         async def inner():
             nonlocal received
             message = await receive()
-            if message['type'] != 'http.request' or self.max_content_size is None:
+            if message["type"] != "http.request" or self.max_content_size is None:
                 return message
-            body_len = len(message.get('body', b''))
+            body_len = len(message.get("body", b""))
             received += body_len
             if received > self.max_content_size:
                 raise self.exception_cls(
                     f"Maximum content size limit ({self.max_content_size}) exceeded ({received} bytes read)"
                 )
             return message
+
         return inner
 
     async def __call__(self, scope, receive, send):
-        if scope['type'] != 'http':
-            self.logger.warning(f"ASGI scope of type {scope['type']} is not supported yet")
+        if scope["type"] != "http":
             await self.app(scope, receive, send)
             return
 
