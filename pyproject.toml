@@ -9,7 +9,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.6"
 starlette = "^0.12.0"
-
+black = {version = "^18.3-alpha.0", allows-prereleases = true}
 [tool.poetry.dev-dependencies]
 pytest = "^4.6"
 pytest-cov = "^2.7"
